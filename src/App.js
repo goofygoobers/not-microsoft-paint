@@ -1,11 +1,13 @@
 import React from "react";
 import { render } from "react-dom";
 import { Stage, Layer, Line, Text } from "react-konva";
+import { TwitterPicker } from 'react-color';
 
 const App = () => {
   const [tool, setTool] = React.useState("pen");
   const [lines, setLines] = React.useState([]);
   const isDrawing = React.useRef(false);
+  const [color, setColor] = React.useState("#ff0000")
 
   const handleMouseDown = (e) => {
     isDrawing.current = true;
@@ -35,6 +37,10 @@ const App = () => {
 
   return (
     <div>
+      <TwitterPicker 
+        color= {color}
+        onChangeComplete= { (color) => {setColor(color.hex)}}
+        /> 
       <Stage
         width={window.innerWidth}
         height={window.innerHeight}
@@ -48,7 +54,7 @@ const App = () => {
             <Line
               key={i}
               points={line.points}
-              stroke="blue"
+              stroke={color}
               strokeWidth={5}
               tension={0.5}
               lineCap="round"
