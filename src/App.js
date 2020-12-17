@@ -1,18 +1,18 @@
 import React from "react";
-import { render } from "react-dom";
+
 import { Palette } from '../src/Palette';
+import { Canvas } from '../src/canvas';
+import { PropertiesPanel } from '../src/PropertiesPanel';
 
 const App = () => {
 
   return (
     <div>
       <Palette />
+      <Canvas />
+      <PropertiesPanel /> 
     </div>
   );
 };
-
-render(<App />, document.getElementById("root"));
-
-
 
 export default App;

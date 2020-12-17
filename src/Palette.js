@@ -40,12 +40,12 @@ export function Palette() {
         draggable
         onDragStar={handleDragStart}
       />
-      <div 
+      {/* <div 
         className="gg-shape-triangle"
         data-shape={SHAPE_TYPES.CIRCLE}
         draggable
         onDragStar={handleDragStart}
-      />
+      /> */}
     </aside>
   )
 }
