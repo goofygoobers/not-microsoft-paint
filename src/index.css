@@ -33,18 +33,14 @@ aside {
 
 .shape {
   margin: 10px;
-  margin-bottom: 40px;
   height: 100px;
   width: 150px;
   border: solid 2px black;
 }
 
-.triangle {
-  width: 0px;
-  height: 0px;
-  border-left: 25px solid transparent;
-  border-right: 25px solid transparent;
-  border-bottom: 50px solid black;
+.circle {
+  width: 100px;
+  border-radius: 50%;
 }
 
 .gg-shape-triangle {
@@ -72,11 +68,6 @@ aside {
   transform: rotate(45deg) skew(10deg,10deg);
   left: -2px;
   bottom: -13px
-}
-
-.circle {
-  width: 100px;
-  border-radius: 50%;
 }
 
 .panel {
@@ -137,3 +128,7 @@ aside {
 .buttons button:hover {
   background: darkgray;
 }
+
+h2{
+  text-align: center;
+} 

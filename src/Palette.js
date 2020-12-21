@@ -35,7 +35,7 @@ const handleDragStart = (event) => {
 export function Palette() {
   return(
     <aside className="palette">
-      <h2>Shapes</h2>
+      <h2>Not Microsoft Paint</h2>
       {/* 
       - adding shapes via index.css
       - draggable attribute makes it draggable.
@@ -50,13 +50,13 @@ export function Palette() {
         draggable
         onDragStart={handleDragStart}
       />
-      <div 
+      {/* <div 
         className="shape circle"
         data-shape={SHAPE_TYPES.CIRCLE}
         draggable
         onDragStar={handleDragStart}
       />
-      {/* <div 
+      <div 
         className="gg-shape-triangle"
         data-shape={SHAPE_TYPES.CIRCLE}
         draggable

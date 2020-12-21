@@ -1,12 +1,18 @@
 import React, { useCallback, useRef } from 'react'; 
 import { Layer, Stage }  from "react-konva"; 
 
-import { useShapes, createCircle, createRectangle, reset, saveDiagram } from "./state"; 
+import { 
+  useShapes, 
+  createCircle, 
+  createRectangle, 
+  reset,
+  saveDiagram, 
+  clearSelection, 
+} from "./state"; 
 import { DRAG_DATA_KEY, SHAPE_TYPES} from './constants'; 
 import { Shape } from './Shape';
 
 const handleDragOver = (event) => event.preventDefault(); 
-
 
 /* 
 we have already set up shapes to be draggable in palette, so here we need allow
@@ -30,7 +36,7 @@ export function Canvas() {
     const draggedData = event.nativeEvent.dataTransfer.getData(DRAG_DATA_KEY); 
 
     if (draggedData) { 
-      const {offsetX, offSetY, type, clientHeight, clientWidth } = JSON.parse(
+      const {offsetX, offsetY, type, clientHeight, clientWidth } = JSON.parse(
         draggedData
       );
       
@@ -53,13 +59,13 @@ export function Canvas() {
         // rectange x, y is at the top, left corner 
         createRectangle({
           x: coords.x - offsetX,
-          y: coords.y - offSetY,
+          y: coords.y - offsetY,
         });
       } else if (type === SHAPE_TYPES.CIRCLE) {
         // circle x,y is at the centre of the circle
         createCircle({
           x: coords.x - (offsetX - clientWidth / 2),
-          y: coords.y - (offSetY - clientHeight / 2),
+          y: coords.y - (offsetY - clientHeight / 2),
         });
       }
     }
@@ -68,14 +74,13 @@ export function Canvas() {
   return ( 
     <main className="canvas" onDrop={handleDrop} onDragOver={handleDragOver}>
       <div className="buttons">
-        {/* <button onClick={saveDiagram}>Save</button>
-        <button onClick={reset}>Reset</button> */}
+        <button onClick={reset}>Reset</button>
       </div>
       <Stage
         ref={stageRef}
-        width={window.innerWidth - 400}
+        width={window.innerWidth}
         height={window.innerHeight}
-        // onClick={clearSelection}
+        onClick={clearSelection}
       >
         <Layer>
           {shapes.map(([key, shape]) => (

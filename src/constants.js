@@ -6,7 +6,7 @@ export const SHAPE_TYPES = {
 export const DEFAULTS = {
   RECT: {
     STROKE: "#000000",
-    FILL: "#ffffff",
+    FILL: "#FFFFFF",
     WIDTH: 150,
     HEIGHT: 100,
     ROTATION: 0,
