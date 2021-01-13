@@ -78,7 +78,7 @@ export function Canvas() {
       </div>
       <Stage
         ref={stageRef}
-        width={window.innerWidth}
+        width={window.innerWidth - 400 } 
         height={window.innerHeight}
         onClick={clearSelection}
       >
