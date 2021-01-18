@@ -4,9 +4,6 @@ import { Palette } from "./Palette";
 import { Canvas } from "./canvas";
 import { PropertiesPanel } from "./PropertiesPanel";
 
-import { render } from 'react-dom';
-import { Stage, Layer, Line, Text } from 'react-konva';
-
 /* 
 Palette component is where the library of shapes the user can chose from
 Canvas is where the shapes can be dragged on

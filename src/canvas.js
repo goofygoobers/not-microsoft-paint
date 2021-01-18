@@ -1,12 +1,12 @@
 import React, { useCallback, useRef } from 'react'; 
-import { Layer, Stage }  from "react-konva"; 
+import { Layer, Stage, Line, Text  }  from "react-konva"; 
 
 import { 
   useShapes, 
   createCircle, 
   createRectangle, 
   reset,
-  saveDiagram, 
+  // saveDiagram, 
   clearSelection, 
 } from "./state"; 
 import { DRAG_DATA_KEY, SHAPE_TYPES} from './constants'; 

@@ -1,6 +1,5 @@
-import React from 'react'; 
-import { ReactComponent as Pencil } from '../src/images/pencil.svg';
-
+import { React } from 'react'; 
+import Paintbrush from '../src/Pencil';
 import { DRAG_DATA_KEY, SHAPE_TYPES } from "./constants";
 
 /* 
@@ -33,10 +32,6 @@ const handleDragStart = (event) => {
   }
 }
 
-const selectPencil = (event) => {
-  console.log("Brush is selected")
-}
-
 export function Palette() {
   return(
     <aside className="palette">
@@ -56,9 +51,7 @@ export function Palette() {
         onDragStart={handleDragStart}
       />
 
-      <button onClick={selectPencil}>
-        <Pencil className height='100px' width='100px'/> 
-      </button>
+      <Paintbrush /> 
 
       {/* <div 
         className="shape circle"
